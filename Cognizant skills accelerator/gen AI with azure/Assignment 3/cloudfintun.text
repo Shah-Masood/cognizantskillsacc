@@ -1,0 +1,71 @@
+---------------------PART 1: FUNDAMENTALS OF FINE-TUNING---------------------
+
+
+Concept Check:
+
+What is the key benefit of fine-tuning a pre-trained model?
+A) It reduces the need for computational resources (Correct Answer)
+B) It avoids using training data
+C) It removes the need for evaluation
+D) It simplifies deployment
+
+Which of the following tools optimizes model deployment in Azure?
+A) ONNX Runtime (Correct Answer)
+B) TensorBoard
+C) Google Sheets
+D) SQL Server
+
+Application Task:
+
+1. Legal Document Summarization
+Pre-Trained Model: BERT (Bidirectional Encoder Representations from Transformers) or Longformer
+Why Fine-Tuning is Beneficial:
+Legal documents contain highly structured and domain-specific terminology that general NLP models may not fully understand. Fine-tuning BERT or Longformer on a dataset of legal 
+texts improves the model's ability to extract key points, identify relevant case laws, and generate concise summaries. This enhances efficiency in legal research and contract analysis while maintaining 
+compliance with industry-specific jargon.
+
+2. Sentiment Analysis for Financial News
+Pre-Trained Model: FinBERT (Financial Sentiment BERT)
+Why Fine-Tuning is Beneficial:
+General sentiment analysis models may not accurately capture sentiment in financial texts, where words like "loss" may not always indicate negativity. Fine-tuning FinBERT on domain-specific 
+financial news and earnings reports improves accuracy in sentiment classification. This helps investors, analysts, and automated trading systems make informed decisions based on market trends.
+
+3. Image Captioning for Medical Imaging
+Pre-Trained Model: BLIP (Bootstrapped Language-Image Pretraining) or GPT-4 Vision
+Why Fine-Tuning is Beneficial:
+Medical imaging requires precise descriptions that general image captioning models might not generate correctly. Fine-tuning a vision-language model like BLIP or GPT-4 Vision on radiology reports improves its ability 
+to describe CT scans, MRIs, and X-rays accurately. This aids radiologists by automating preliminary diagnoses and improving accessibility for non-specialists.
+
+
+---------------------PART 2: IMPLEMENTING FINE-TUNING ON AZURE---------------------
+
+
+To fine-tune Llama 2 for sentiment analysis, we would utilize the Sentiment140 dataset, which comprises 1,600,000 tweets labeled as positive or negative. This dataset is particularly suitable due to its large size and 
+relevance to social media sentiment analysis.
+
+After fine-tuning Llama 2 for sentiment analysis, evaluating its performance is crucial to ensure its effectiveness in real-world applications. The primary metric used would be accuracy, which measures the percentage 
+of correctly classified sentiments. However, accuracy alone may not be sufficient, especially if the dataset has class imbalances. To provide a more balanced evaluation, precision and recall would be examined—precision ensures 
+that positive sentiment predictions are correct, while recall assesses the model’s ability to identify all positive instances. The F1 score, which balances precision and recall, would offer a more comprehensive performance metric. 
+Additionally, a confusion matrix would be used to analyze false positives and false negatives, providing insight into potential biases and misclassifications.
+One major challenge in fine-tuning sentiment analysis models is domain shift—if the model is applied to data from a different domain (e.g., customer reviews instead of social media posts), performance may degrade. Another challenge 
+is subtle sentiment detection, as sarcasm, irony, or mixed emotions can be difficult for the model to classify accurately. Computational constraints may also arise, as fine-tuning large transformer models like Llama 2 requires significant 
+processing power. To mitigate these issues, continuous monitoring, data augmentation with diverse sentiment sources, and leveraging cloud-based AI infrastructure would be essential for maintaining high model accuracy and reliability.
+
+
+---------------------PART 3: EVALUATING AND DEPLOYING MODELS---------------------
+
+
+Concept Check:
+
+Fine-tuning eliminates the need for evaluation metrics. (False)
+Azure Machine Learning provides tools for real-time monitoring of deployed models. (True)
+
+Reflection Activity:
+
+Evaluating a fine-tuned model using metrics like F1-Score and cross-validation is essential for ensuring its accuracy, reliability, and generalizability. The F1-Score balances precision and recall, making it a crucial metric, especially for 
+imbalanced datasets where accuracy alone can be misleading. For instance, in a fraud detection model, if 98% of transactions are legitimate and only 2% are fraudulent, a model predicting all transactions as legitimate would have high accuracy 
+but fail in detecting fraud. An F1-Score would reveal such shortcomings by highlighting false negatives.
+Cross-validation further strengthens model evaluation by splitting the dataset into multiple training and validation subsets, reducing the risk of overfitting. Without cross-validation, a model may perform well on the training data but fail 
+in real-world applications due to lack of generalization.
+Skipping or poorly executing evaluation can lead to biased models, poor decision-making, and financial losses. For example, in healthcare AI, a misclassified diagnosis model could endanger patients by providing incorrect results. Similarly, 
+in customer sentiment analysis, an unreliable model may misinterpret emotions, leading to flawed marketing strategies. Proper evaluation ensures AI models are robust, unbiased, and ready for deployment in real-world applications.

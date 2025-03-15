@@ -1,0 +1,100 @@
+---------------------PART 1: FUNDAMENTALS OF PROMPT FLOW---------------------
+
+
+Concept Check:
+
+What is the purpose of prompt flow in LLM applications?
+A) To design how inputs are structured and processed (Correct Answer)
+B) To train new models
+C) To monitor external APIs
+D) To evaluate usage patterns
+
+Which feature of Azure supports prompt flow testing?
+A) Integrated Debugging (Correct Answer)
+B) SQL Query Tools
+C) Image Recognition Modules
+D) Cloud Storage Optimization
+
+Application Task:
+
+Use Case: Customer Support Chatbot
+A customer support chatbot powered by a Large Language Model (LLM) can automate responses to common customer queries, improve response time, and enhance customer satisfaction. 
+Here’s a breakdown of the steps involved in building this application using Prompt Flow in Azure AI Studio.
+
+1. Define Inputs, Prompts, and Outputs
+
+Inputs:
+User query (e.g., "How do I reset my password?")
+Context (e.g., user's account status, past interactions)
+Knowledge base or FAQs
+
+Prompt Design:
+The LLM is given a structured prompt with context, such as:
+"You are a helpful AI-powered support assistant. Answer the following customer query accurately and concisely based on the provided knowledge base: [User Query]. If the query is unclear, 
+ask for clarification."
+
+Outputs:
+A relevant response (e.g., "To reset your password, go to Settings > Account > Reset Password and follow the instructions.")
+Suggested follow-up actions
+Escalation to human agents (if necessary)
+
+2. Key Integrations & APIs
+
+Azure OpenAI Service – For processing customer queries using an LLM like GPT-4.
+Azure Cognitive Search – To retrieve answers from a knowledge base dynamically.
+Azure Bot Service – For deploying the chatbot across multiple channels (website, Microsoft Teams, WhatsApp).
+CRM Integration (e.g., Salesforce API) – To personalize responses based on customer data.
+Sentiment Analysis (via Azure Text Analytics API) – To gauge user satisfaction and escalate urgent issues.
+
+3. Steps in Building the Application with Prompt Flow
+Set Up Azure AI Studio & Prompt Flow – Create a new Prompt Flow project to design the chatbot’s conversation logic.
+Define the Prompt Template – Optimize prompt engineering to ensure accurate and context-aware responses.
+Integrate External Data Sources – Use Azure Cognitive Search for retrieving FAQs dynamically.
+Deploy APIs & Workflow Automation – Connect to Azure OpenAI API and integrate with CRM and sentiment analysis tools.
+Testing & Iteration – Validate chatbot responses using real-world queries, adjust prompts, and fine-tune performance.
+Deploy & Monitor – Deploy the chatbot via Azure Bot Service, continuously track performance, and update knowledge bases as needed.
+
+
+---------------------PART 2: BUILDING LLM APPLICATIONS---------------------
+
+
+Components of the Prompt Flow:
+
+Input Nodes:
+User Topic Input: A text input node where users enter the desired topic for the blog post.​
+
+Model Nodes:
+Large Language Model (LLM): Utilizing Azure's integration with OpenAI's GPT-4, a model node processes the user-provided topic to generate 
+coherent and contextually relevant blog post content.​
+
+Output Nodes:
+Blog Post Draft Display: An output node presents the generated blog post draft to the user for review and further editing.​
+
+Reflection on Designing the Prompt Flow:
+Designing this prompt flow presented several challenges. One primary concern was ensuring the generated content's relevance and coherence across diverse topics. To address this, 
+I implemented iterative testing with varied input topics, refining the prompt to guide the LLM effectively. Another challenge involved maintaining a consistent tone and style in the generated content. 
+By fine-tuning the LLM on a curated dataset of exemplary blog posts, I enhanced the model's ability to produce content that aligns with typical blogging standards. Additionally, integrating the input 
+and output nodes seamlessly required careful configuration to ensure a user-friendly interface. Azure AI Studio's visual editor facilitated this process by allowing intuitive drag-and-drop placement and connection of nodes, 
+streamlining the development workflow. Overall, Azure's robust tools and resources significantly mitigated potential obstacles, enabling the efficient creation of a functional content generation tool.
+
+
+---------------------PART 3: MONITORING AND MAINTAINING LLM APPLICATIONS---------------------
+
+
+Concept Check:
+
+Monitoring ensures application performance and helps identify potential issues. (True)
+Version control is not necessary for maintaining LLM applications. (False)
+
+Reflection Activity:
+
+Monitoring metrics like latency and error rates is crucial for optimizing the user experience in LLM applications. Latency refers to the time taken for the model to process a request and generate a response. 
+High latency can lead to delays, frustrating users, especially in real-time applications like chatbots or customer service automation. Error rates track failures such as incomplete responses, API timeouts, or unexpected outputs, 
+which can degrade reliability.
+For example, in a content generation tool, if latency is too high, users might abandon the platform. Similarly, a customer support chatbot experiencing frequent errors could provide incorrect responses, leading to customer dissatisfaction.
+Azure provides several tools for effective monitoring:
+Azure Application Insights – Tracks response times, detects anomalies, and provides real-time alerts.
+Azure Monitor – Collects logs, analyzes telemetry data, and identifies performance bottlenecks.
+Azure AI Metrics Dashboard – Offers insights into API usage, success/failure rates, and model response health.
+Strategies like autoscaling, caching frequent queries, and load balancing can help mitigate high latency. Regular model evaluation using human-in-the-loop feedback ensures continuous improvements. By actively monitoring and optimizing 
+these metrics, businesses can enhance the efficiency and reliability of LLM applications.
